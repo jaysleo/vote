@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="yes" name="apple-touch-fullscreen" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<title>2010北京奔驰庆祝建党百年红歌大赛</title>
+		<link type="text/css" href="css/css.css" rel="stylesheet">
+		<script type="text/javascript" src="js/flexible.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+	</head>
+	<body class="scorebg">
+		<div class="scorewrap topjudges">
+			<ul class="tit">
+				<li>
+					<div class="left">
+						<span>专业评委</span>
+						<span class="small">Professional Judge</span>
+					</div>
+					<div class="right">
+						<span>李麟征</span>
+						<span class="small">Linzheng Li</span>
+					</div>
+				</li>
+				<li>
+					<div class="left">
+						<span>合唱曲目:</span>
+						<span class="small">Chorus Repertoire:</span>
+					</div>
+					<div class="right">
+						<span>《夜空中最亮的星》+《少年》</span>
+						<span class="small">Ode to the Motherland</span>
+					</div>
+				</li>
+				<li>
+					<div class="left">
+						<span>参选部门:</span>
+						<span class="small">Participating Department:</span>
+					</div>
+					<div class="right">
+						<span>财务控制与审计合规与战略项目分会</span>
+						<span class="small">Ode to the Motherland</span>
+					</div>
+				</li>
+			</ul>
+			<div class="pagebox">
+				<div class="prev">
+					<i class="icon"></i>
+					<p>
+						<span>上一组</span>
+						<span class="small">Back</span>
+					</p>
+				</div>
+				<div class="icons"><i class="img"></i></div>
+				<div class="next">
+					<p>
+						<span>下一组</span>
+						<span class="small">Next</span>
+					</p>
+					<i class="icon"></i>
+				</div>
+			</div>
+			<div class="scorebox">
+				<div class="hd">
+					<div class="th">
+						<div class="name">
+							<p>
+								<span>评分项</span>
+								<span class="small">(CATEGORY)</span>
+							</p>
+						</div>
+					</div>
+					<div class="th">
+						<div class="name">
+							<p>
+								<span>分数</span>
+								<span class="small">(SCORE)</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="bd">
+					<div class="td">
+						<p><span>完成度</span><span class="small">(最高分20)</span></p>
+						<p class="small">Completion(Highest Score 20)</p>
+					</div>
+					<div class="td">
+						<input type="text" name="score" id="score" value="" placeholder="请打分" onkeyup="format_input_num(this,1)">
+					</div>
+				</div>
+				<div class="bd">
+					<div class="td">
+						<p><span>音色/音准/节奏</span><span class="small">(最高分30)</span></p>
+						<p class="small">Timbre,Intonation,Rhythm(Highest Score 30)</p>
+					</div>
+					<div class="td">
+						<input type="text" name="score2" id="score2" value="" placeholder="请打分" onkeyup="format_input_num(this,2)">
+					</div>
+				</div>
+				<div class="bd">
+					<div class="td">
+						<p><span>整体表现力</span><span class="small">(最高分10)</span></p>
+						<p class="small">Overall Performances(Highest Score 10)</p>
+					</div>
+					<div class="td">
+						<input type="text" name="score3" id="score3" value="" placeholder="请打分" onkeyup="format_input_num(this,3)">
+					</div>
+				</div>
+				<div class="bd last">
+					<div class="td">
+						<p><span>总得分</span><span class="small">(Total)</span></p>
+					</div>
+					<div class="td">
+						<p class="total"></p>
+					</div>
+				</div>
+			</div>
+			<div class="onsubmit">
+				<div class="submitbox">
+					<p>提交</p>
+					<p class="small">Submit</p>
+				</div>
+			</div>
+			<div class="submited" style="display: none;">
+				<div class="submitbox">
+					<p>提交成功</p>
+					<p class="small">SUBMITTED SUCCESSFULLY</p>
+				</div>
+			</div>
+			<div class="tipbox">北京奔驰工会 BBAC Trade Union</div>
+			<div class="number">1</div>
+		</div>
+		<div class="popup-maskEdit"></div>
+		<!-- <script type="text/javascript">
+			var able_click = "0"
+		
+			function prevSong(){
+		
+				if( able_click == '1' ){
+					window.location.href = "/index/top_judges/pick/team_id/2/token/7f99f1d2091d32b78d804a42d98f4d31.html"
+				}else{
+					if( $("#score").val()!=""  || $("#score2").val()!="" || $("#score3").val()!="" ){
+						mask("请先提交当前评分 Please click the SUBMIT first")
+					}else{
+						window.location.href = "/index/top_judges/pick/team_id/2/token/7f99f1d2091d32b78d804a42d98f4d31.html"
+		
+					}
+				}
+		
+			}
+		
+			function nextSong(){
+				if( able_click == '1' ){
+					window.location.href = "/index/top_judges/pick/team_id/4/token/7f99f1d2091d32b78d804a42d98f4d31.html"
+				}else{
+					if( $("#score").val()!=""  || $("#score2").val()!="" || $("#score3").val()!="" ){
+						mask("请先提交当前评分 Please click the SUBMIT first")
+					}else{
+						window.location.href = "/index/top_judges/pick/team_id/4/token/7f99f1d2091d32b78d804a42d98f4d31.html"
+					}
+				}
+			}
+			//验证
+			function format_input_num(obj){
+				// 清除"数字"和"."以外的字符
+				obj.value = obj.value.replace(/[^\d.]/g,"");
+				// 验证第一个字符是数字
+				obj.value = obj.value.replace(/^\./g,"");
+				// 只保留第一个, 清除多余的小数点
+				obj.value = obj.value.replace(/\.{2,}/g,".");
+				obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+				// 只能输入两个小数
+				obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3');
+			}
+			function mask(msg){
+				$(".popup-maskEdit").html(msg).show();
+				setTimeout(function(){
+					$(".popup-maskEdit").html("").hide();
+				},1000)
+			}
+			function formatNum(f, digit) {
+				var m = Math.pow(10, digit);
+				return parseInt(f * m, 10) / m;
+			}
+			//是否整数
+			function isInteger(obj) {
+				return Math.floor(obj) === obj
+			}
+		
+		
+			$(function(){
+				var total = 0;
+				$(document).bind('input propertychange',function(){
+		
+					var finish_score = $("#score").val()==""?parseFloat(0):parseFloat($("#score").val());
+					var voice_score = $("#score2").val()==""?parseFloat(0):parseFloat($("#score2").val());
+					var show_score = $("#score3").val()==""?parseFloat(0):parseFloat($("#score3").val());
+		
+		
+					if(finish_score>20){
+						mask("<p>完成度最高分为20分</p><p>Mental Outlook Highest Score is 20 points</p>");
+						$("#score").val("");
+						finish_score = "";
+					}
+					if(voice_score>30){
+						mask("<p>音色/音准/节奏最高分为30分</p><p>Timbre,Intonation,Rhythm Highest Score is 30 points</p>");
+						$("#score2").val("");
+						voice_score = "";
+					}
+					if(show_score>10){
+						mask("<p>整体表现力最高分为10分</p><p>Overall Performances Highest Score is 10 points</p>");
+						$("#score3").val("");
+						show_score = "";
+					}
+					//total
+					total = parseFloat(voice_score+finish_score+show_score);
+					if(!isNaN(total)){
+						if(isInteger(total)){
+							$(".total").html(total);
+						}else{
+							$(".total").html(total.toFixed(2));
+						}
+					}
+				});
+		
+				$(".submitbox").click(function(){
+					if(parseFloat(total)>=0){
+		
+						var finish_score = $("#score").val()==""?parseFloat(0):parseFloat($("#score").val());
+						var voice_score = $("#score2").val()==""?parseFloat(0):parseFloat($("#score2").val());
+						var show_score = $("#score3").val()==""?parseFloat(0):parseFloat($("#score3").val());
+		
+		
+		
+						// $.post("/index/top_judges/vote",{
+						// 	"team_id":"3",
+						// 	"finish_score":finish_score,
+						// 	"voice_score":voice_score,
+						// 	"show_score":show_score,
+						// 	"token":"7f99f1d2091d32b78d804a42d98f4d31"
+						// },function(res){
+						// 	console.log(res)
+						// 	if(res.code == 200){
+						// 		mask("<p>提交成功</p><p>Succesful</p>");
+						// 		able_click = 1
+						// 	}else{
+						// 		mask(res.message)
+						// 	}
+						// })
+		
+		
+						$(".onsubmit").hide();
+						$(".submited").show();
+					}else{
+						mask("<p>请打分</p><p>Please indicate</p>");
+					}
+				})
+		
+		
+		
+			})
+		</script> -->
+		<script type="text/javascript">
+		var total = 0;
+		var finish_score = $("#score").val()==""?0:parseFloat($("#score").val());
+		var voice_score = $("#score2").val()==""?0:parseFloat($("#score2").val());
+		var show_score = $("#score3").val()==""?0:parseFloat($("#score3").val());
+		
+		//验证
+		function format_input_num(obj,index){
+			// 清除"数字"和"."以外的字符
+			obj.value = obj.value.replace(/[^\d.]/g,"");
+			// 验证第一个字符是数字
+			obj.value = obj.value.replace(/^\./g,"");
+			// 只保留第一个, 清除多余的小数点
+			obj.value = obj.value.replace(/\.{2,}/g,".");
+			obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+			// 只能输入两个小数
+			obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3');
+			//分数
+			if(index==1){
+				if(parseFloat(obj.value)>20){
+					obj.value = "";
+					mask("<p>完成度最高分为20分</p><p>Mental Outlook Highest Score is 20 points</p>");
+				}
+				finish_score = isNaN(parseFloat(obj.value))?0:parseFloat(obj.value);
+				console.log(finish_score)
+			}else if(index==2){
+				if(parseFloat(obj.value)>30){
+					obj.value = "";
+					mask("<p>音色/音准/节奏最高分为30分</p><p>Timbre,Intonation,Rhythm Highest Score is 30 points</p>");
+				}
+				voice_score = isNaN(parseFloat(obj.value))?0:parseFloat(obj.value);
+			}else{
+				if(parseFloat(obj.value)>10){
+					obj.value = "";
+					mask("<p>整体表现力最高分为10分</p><p>Overall Performances Highest Score is 10 points</p>");
+				}
+				show_score = isNaN(parseFloat(obj.value))?0:parseFloat(obj.value);
+			}
+			//total
+			total = parseFloat(finish_score+voice_score+show_score);
+			if(!isNaN(total)){
+				$(".total").html(total.toFixed(2));
+			}
+		}
+		//提示
+		function mask(msg){
+			$(".popup-maskEdit").html(msg).show();
+			setTimeout(function(){
+				$(".popup-maskEdit").html("").hide();
+			},1000)
+		}
+		$(function(){
+			// var total = 0;
+			// $(document).bind('input propertychange',function(){
+			// 	var finish_score = $("#score").val()==""?parseFloat(0):parseFloat($("#score").val());
+			// 	var voice_score = $("#score2").val()==""?parseFloat(0):parseFloat($("#score2").val());
+			// 	var show_score = $("#score3").val()==""?parseFloat(0):parseFloat($("#score3").val());
+			// 	if(finish_score>20){
+			// 		mask("<p>完成度最高分为20分</p><p>Mental Outlook Highest Score is 20 points</p>");
+			// 		$("#score").val("");
+			// 		finish_score = "";
+			// 	}
+			// 	if(voice_score>30){
+			// 		mask("<p>音色/音准/节奏最高分为30分</p><p>Timbre,Intonation,Rhythm Highest Score is 30 points</p>");
+			// 		$("#score2").val("");
+			// 		voice_score = "";
+			// 	}
+			// 	if(show_score>10){
+			// 		mask("<p>整体表现力最高分为10分</p><p>Overall Performances Highest Score is 10 points</p>");
+			// 		$("#score3").val("");
+			// 		show_score = "";
+			// 	}
+			// 	//total
+			// 	total = parseFloat(finish_score+voice_score+show_score);
+			// 	if(!isNaN(total)){
+			// 		$(".total").html(total);
+			// 	}
+			// });
+			$(".submitbox").click(function(){
+				if(finish_score!=""&&voice_score!=""&&show_score!=""){
+					if(parseFloat(total)>=0){
+						mask("<p>提交成功</p><p>Succesful</p>");
+						$(".onsubmit").hide();
+						$(".submited").show();
+					}
+				}else{
+					mask("<p>请打分</p><p>Please indicate</p>");
+				}
+			})
+		})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="yes" name="apple-touch-fullscreen" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<title>2010北京奔驰庆祝建党百年红歌大赛</title>
+		<link type="text/css" href="css/css.css" rel="stylesheet">
+		<script type="text/javascript" src="js/flexible.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+	</head>
+	<body class="scorebg">
+		<div class="scorewrap judges">
+			<ul class="tit">
+				<!-- <li>
+					<div><span>公司领导/分会员工代表</span><span>王力宏</span></div>
+					<div><span class="small">BBAC Leaders/Branch Representatives</span><span class="small">Yili Li</span></div>
+				</li>
+				<li>
+					<div><span>合唱曲目:</span><span>《共产党》</span></div>
+					<div><span class="small">Chorus Repertoire:</span><span class="small">Ode to the Motherland</span></div>
+				</li>
+				<li>
+					<div><span>参选部门:</span><span>分会</span></div>
+					<div><span class="small">Participating Department:</span><span class="small">Ode to the Motherland</span></div>
+				</li> -->
+				<li>
+					<div class="left">
+						<span>公司领导/分会员工代表</span>
+						<span class="small">BBAC Leaders/Branch Representatives</span>
+					</div>
+					<div class="right">
+						<span>王力宏</span>
+						<span class="small">Yili Li</span>
+					</div>
+				</li>
+				<li>
+					<div class="left">
+						<span>合唱曲目:</span>
+						<span class="small">Chorus Repertoire:</span>
+					</div>
+					<div class="right">
+						<span>《共产党》</span>
+						<span class="small">Ode to the Motherland</span>
+					</div>
+				</li>
+				<li>
+					<div class="left">
+						<span>参选部门:</span>
+						<span class="small">Participating Department:</span>
+					</div>
+					<div class="right">
+						<span>分会</span>
+						<span class="small">Ode to the Motherland</span>
+					</div>
+				</li>
+			</ul>
+			<div class="pagebox">
+				<div class="prev">
+					<i class="icon"></i>
+					<p>
+						<span>上一组</span>
+						<span class="small">Back</span>
+					</p>
+				</div>
+				<div class="icons"><i class="img"></i></div>
+				<div class="next">
+					<p>
+						<span>下一组</span>
+						<span class="small">Next</span>
+					</p>
+					<i class="icon"></i>
+				</div>
+			</div>
+			<div class="scorebox">
+				<div class="hd">
+					<div class="th">
+						<div class="name">
+							<p>
+								<span>评分项</span>
+								<span class="small">(CATEGORY)</span>
+							</p>
+						</div>
+					</div>
+					<div class="th">
+						<div class="name">
+							<p>
+								<span>分数</span>
+								<span class="small">(SCORE)</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="bd">
+					<div class="td">
+						<p><span>精神面貌</span><span class="small">(最高分9)</span></p>
+						<p class="small">Mental Outlook(Highest Score 9)</p>
+					</div>
+					<div class="td">
+						<input type="text" name="score" id="score" value="" placeholder="请打分" onkeyup="format_input_num(this,1)">
+					</div>
+				</div>
+				<div class="bd">
+					<div class="td">
+						<p><span>整齐效果</span><span class="small">(最高分9)</span></p>
+						<p class="small">Overall Performances(Highest Score 9)</p>
+					</div>
+					<div class="td">
+						<input type="text" name="score2" id="score2" value="" placeholder="请打分" onkeyup="format_input_num(this,2)">
+					</div>
+				</div>
+				<div class="bd">
+					<div class="td">
+						<p><span>队形整齐度</span><span class="small">(最高分9)</span></p>
+						<p class="small">Formation uniformity(Highest Score 9)</p>
+					</div>
+					<div class="td">
+						<input type="text" name="score3" id="score3" value="" placeholder="请打分" onkeyup="format_input_num(this,3)">
+					</div>
+				</div>
+				<div class="bd">
+					<div class="td">
+						<p><span>L3及以上领导、外专是否参加</span><span class="small">(0分或者3分)</span></p>
+						<p class="small">L3 and above leaders,foreigners participates or not(0 or 3)</p>
+					</div>
+					<div class="td">
+						<input type="text" name="score4" id="score4" value="" placeholder="请打分" onkeyup="format_input_num(this,4)">
+					</div>
+				</div>
+				<div class="bd last">
+					<div class="td">
+						<p><span>总得分</span><span class="small">(Total)</span></p>
+					</div>
+					<div class="td">
+						<p class="total"></p>
+					</div>
+				</div>
+			</div>
+			<div class="onsubmit">
+				<div class="submitbox">
+					<p>提交</p>
+					<p class="small">Submit</p>
+				</div>
+			</div>
+			<div class="submited" style="display: none;">
+				<div class="submitbox">
+					<p>提交成功</p>
+					<p class="small">SUBMITTED SUCCESSFULLY</p>
+				</div>
+			</div>
+			<div class="tipbox">北京奔驰工会 BBAC Trade Union</div>
+			<div class="number">1</div>
+		</div>
+		<div class="popup-maskEdit"></div>
+		<script type="text/javascript">
+		var total = 0;
+		var mental_score = $("#score").val()==""?parseFloat(0):parseFloat($("#score").val());
+		var neat_score = $("#score2").val()==""?parseFloat(0):parseFloat($("#score2").val());
+		var team_score = $("#score3").val()==""?parseFloat(0):parseFloat($("#score3").val());
+		var lead_score = $("#score4").val()==""?parseInt(0):parseInt($("#score4").val());
+		//验证
+		function format_input_num(obj,index){
+			// 清除"数字"和"."以外的字符
+			obj.value = obj.value.replace(/[^\d.]/g,"");
+			// 验证第一个字符是数字
+			obj.value = obj.value.replace(/^\./g,"");
+			// 只保留第一个, 清除多余的小数点
+			obj.value = obj.value.replace(/\.{2,}/g,".");
+			obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
+			// 只能输入两个小数
+			obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3');
+			//分数
+			if(index==1){
+				if(parseFloat(obj.value)>9){
+					obj.value = "";
+					mask("<p>精神面貌最高分为9分</p><p>Mental Outlook Highest Score is 9 points</p>");
+				}
+				mental_score = isNaN(parseFloat(obj.value))?0:parseFloat(obj.value);
+			}else if(index==2){
+				if(parseFloat(obj.value)>9){
+					obj.value = "";
+					mask("<p>整齐效果最高分为9分</p><p>Overall Performances Highest Score is 9 points</p>");
+				}
+				neat_score = isNaN(parseFloat(obj.value))?0:parseFloat(obj.value);
+			}else if(index==3){
+				if(parseFloat(obj.value)>9){
+					obj.value = "";
+					mask("<p>队形整齐度最高分为9分</p><p>Formation uniformity Highest Score is 9 points</p>");
+				}
+				team_score = isNaN(parseFloat(obj.value))?0:parseFloat(obj.value);
+			}else{
+				if(parseInt(obj.value)!=0 && parseInt(obj.value)!=3){
+					
+					obj.value = "";
+					mask("<p>L3及以上领导、外专是否参加(0分或者3分)</p><p>L3 and above leaders,foreigners participates or not</p>");
+				}
+				lead_score = isNaN(parseInt(obj.value))?0:parseInt(obj.value);
+			}
+			//total
+			total = parseFloat(mental_score+neat_score+team_score+lead_score);
+			if(!isNaN(total)){
+				$(".total").html(total.toFixed(2));
+			}
+		}
+		function mask(msg){
+			$(".popup-maskEdit").html(msg).show();
+			setTimeout(function(){
+				$(".popup-maskEdit").html("").hide();
+			},1000)
+		}
+		$(function(){
+			// var total = 0;
+			// $(document).bind('input propertychange',function(){
+			// 	var mental_score = $("#score").val()==""?parseFloat(0):parseFloat($("#score").val());
+			// 	var neat_score = $("#score2").val()==""?parseFloat(0):parseFloat($("#score2").val());
+			// 	var team_score = $("#score3").val()==""?parseFloat(0):parseFloat($("#score3").val());
+			// 	var lead_score = $("#score4").val()==""?parseFloat(0):parseFloat($("#score4").val());
+			// 	if(mental_score>9){
+			// 		mask("<p>精神面貌最高分为9分</p><p>Mental Outlook Highest Score is 9 points</p>");
+			// 		$("#score").val("");
+			// 		mental_score = parseFloat(0);
+			// 	}
+			// 	if(neat_score>9){
+			// 		mask("<p>整齐效果最高分为9分</p><p>Overall Performances Highest Score is 9 points</p>");
+			// 		$("#score2").val("");
+			// 		neat_score = parseFloat(0);
+			// 	}
+			// 	if(team_score>9){
+			// 		mask("<p>队形整齐度最高分为9分</p><p>Formation uniformity Highest Score is 9 points</p>");
+			// 		$("#score3").val("");
+			// 		team_score = parseFloat(0);
+			// 	}
+			// 	if(lead_score!=0&&lead_score!=3){
+			// 		mask("<p>L3领导参加与否最高分为3分</p><p>L3 Leadership Highest Score is 3 points</p>");
+			// 		$("#score4").val("");
+			// 		lead_score = parseFloat(0);
+			// 	}
+			// 	//total
+			// 	setTimeout(function(){
+			// 		total = parseFloat(mental_score+neat_score+team_score+lead_score);
+			// 		if(!isNaN(total)){
+			// 			$(".total").html(total.toFixed(2));
+			// 		}
+			// 	},100)
+			// });
+			$(".submitbox").click(function(){
+				var mental_score = parseFloat($("#score").val());
+				var neat_score = parseFloat($("#score2").val());
+				var team_score = parseFloat($("#score3").val());
+				var lead_score = parseFloat($("#score4").val());
+				if(parseFloat(total)>=0){
+					mask("<p>提交成功</p><p>Succesful</p>");
+					$(".onsubmit").hide();
+					$(".submited").show();
+				}else{
+					mask("<p>请打分</p><p>Please indicate</p>");
+				}
+			})
+		})
+		</script>
+	</body>
+</html>
